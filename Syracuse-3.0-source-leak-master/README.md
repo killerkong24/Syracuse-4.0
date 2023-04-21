@@ -1,11 +1,10 @@
-# Syracuse-v3.0
+# Syracuse-v4.0
 
-a 1.19.3 mixin-based UTILITY MOD for minecraft 1.19.3 using fabric.
+a skid client built off Syracuse but aims to fix most of the issues present in Syracuse-v3.0 (overall it being a shit client 
+with a bad owner and worse modules) by adding some code of my own and modules of my own
 
-# lisence
+# code
+Note: most of the code i added to Syracuse (https://github.com/Volcan4436/Syracuse-3.0-source-leak) 
+ISNT my own most of the code is taken for aidshark, and CwHack although i did add some of my own
 
-dont leak src its a very yummy code cookie monster will come to get u if u leak xd!!!
 
-# gui!!
-
-![a](https://media.discordapp.net/attachments/1058433437607940308/1082215265024081970/image.png)
