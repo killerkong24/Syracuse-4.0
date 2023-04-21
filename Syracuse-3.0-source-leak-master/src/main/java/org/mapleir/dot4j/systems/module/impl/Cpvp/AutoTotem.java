@@ -23,16 +23,16 @@ public class AutoTotem extends Module {
 
     private final ModeSetting mode = new ModeSetting("mode","fast totem", "inv totem");
     private final NumberSetting delay = new NumberSetting("delay",0, 20,0,1);
-    private final NumberSetting totemSlot = new NumberSetting("totem slot",1, 9,9,1);
-    private final BooleanSetting hotBarRestock = new BooleanSetting("hotbar Restock", false);
-
+    private final NumberSetting totemSlot = new NumberSetting("totem slot",0, 8,8,1);
+    public BooleanSetting autoSwitch = new BooleanSetting("Auto Switch", false);
     private int nextTickSlot;
     private int totems;
 
 
     private int clock;
+
     public AutoTotem() {
-        addSettings(mode,delay,totemSlot,hotBarRestock);
+        addSettings(mode,delay,totemSlot,autoSwitch);
     }
 
     @Override
@@ -63,35 +63,43 @@ public class AutoTotem extends Module {
             if (nextTotemSlot != -1)
                 moveTotem(nextTotemSlot, offhandStack);
 
-            if (hotBarRestock.isEnabled()) {
-                mc.interactionManager.clickSlot(0, nextTotemSlot, 0, SlotActionType.PICKUP, mc.player);
-                mc.interactionManager.clickSlot(0, (int) totemSlot.getValue(), 0, SlotActionType.PICKUP, mc.player);
-            }
+            if (autoSwitch.isEnabled())
+                inventory.selectedSlot = (int) totemSlot.getValue();
         }
 
         ///inv
-        if (mode.isMode("bad totem")) {
+        if (mode.isMode("inv totem")) {
             PlayerInventory inventory = mc.player.getInventory();
-            ItemStack offhand = inventory.getStack(45);
+            ItemStack offhandStack = inventory.getStack(40);
+
             int nextTotemSlot = searchForTotems(inventory);
-            if (mc.currentScreen instanceof InventoryScreen) {
-                if (clock > -1){
-                    clock--;
+            if (!(mc.currentScreen instanceof InventoryScreen))
+            {
+                clock = -1;
+                return;
+            }
+            if (clock == -1)
+                clock = (int) delay.getValue();
+            if (clock > 0)
+            {
+                clock--;
+                return;
+            }
+            PlayerInventory inv = mc.player.getInventory();
+
+            if (autoSwitch.isEnabled()) {
+                inv.selectedSlot = (int) totemSlot.getValue();
+            }
+            if (inv.offHand.get(0).getItem() != Items.TOTEM_OF_UNDYING)
+            {
+                int slot = nextTotemSlot;
+                if (slot != -1)
+                {
+                    mc.interactionManager.clickSlot(((InventoryScreen) mc.currentScreen).getScreenHandler().syncId, slot, 40, SlotActionType.SWAP, mc.player);
                     return;
                 }
-                if (!isTotem(offhand)) {
-                    mc.interactionManager.clickSlot(0, nextTotemSlot, 0, SlotActionType.PICKUP, mc.player);
-                    mc.interactionManager.clickSlot(0, 45, 0, SlotActionType.PICKUP, mc.player);
-                }
-                if (hotBarRestock.isEnabled()) {
-                    ItemStack totemslot = inventory.getStack((int) totemSlot.getValue());
-                    mc.interactionManager.clickSlot(0, searchinvForTotems(), 0, SlotActionType.PICKUP, mc.player);
-                    mc.interactionManager.clickSlot(0, (int) totemSlot.getValue() + 35, 0, SlotActionType.PICKUP, mc.player);
-                }
             }
-            if (!(mc.currentScreen instanceof InventoryScreen)){
-                clock = (int) delay.getValue();
-            }
+
         }
     }
 
@@ -132,16 +140,6 @@ public class AutoTotem extends Module {
         }
 
         return nextTotemSlot;
-    }
-    private int searchinvForTotems()
-    {
-        PlayerInventory inv = mc.player.getInventory();
-        for (int i = 9; i < 36; i++)
-        {
-            if (inv.main.get(i).getItem() == Items.TOTEM_OF_UNDYING)
-                return i;
-        }
-        return -1;
     }
 
     private boolean isTotem(ItemStack stack)
