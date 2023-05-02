@@ -6,6 +6,7 @@ import org.mapleir.dot4j.systems.module.impl.Cpvp.*;
 import org.mapleir.dot4j.systems.module.impl.KillerKlient.Arraylist;
 import org.mapleir.dot4j.systems.module.impl.KillerKlient.HUD;
 import org.mapleir.dot4j.systems.module.impl.KillerKlient.Spoofer;
+import org.mapleir.dot4j.systems.module.impl.KillerKlient.Theme;
 import org.mapleir.dot4j.systems.module.impl.combat.*;
 import org.mapleir.dot4j.systems.module.impl.misc.Plugins;
 import org.mapleir.dot4j.systems.module.impl.misc.SelfDestruct;
@@ -33,12 +34,12 @@ public class ModuleManager {
         add(new Arraylist());
         add(new ESP());
         add(new HUD());
+        add(new Theme());
         // CPVP MODULES
         add(new AutoCrystal());
         add(new AutoTotem());
         add(new CrystalPop());
         add(new CrystalPlace());
-        add(new AutoDhand());
 
         // COMBAT MODULES
         add(new AimAssist());

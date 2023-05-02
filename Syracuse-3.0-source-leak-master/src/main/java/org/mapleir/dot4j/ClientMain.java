@@ -46,18 +46,20 @@ public class ClientMain implements ModInitializer {
             e.printStackTrace();
         }
         WorldRenderEndEvent.init();
-        Theme.darkTheme();
+        Theme.dark();
 //        }
     }
 
     public void onKeyPress(int key, int action) {
         MinecraftClient mc = MinecraftClient.getInstance();
         if (mc.currentScreen == null) {
-            if (action == GLFW.GLFW_PRESS) {
-                if (key == GLFW.GLFW_KEY_RIGHT_ALT) mc.setScreen(ClickGUI.getINSTANCE());
-                for (Module module : ModuleManager.INSTANCE.getModules()) {
-                    if (module.getKey() == key) {
-                        module.toggle();
+            if (mc.options.debugProfilerEnabled == true){
+                if (action == GLFW.GLFW_PRESS) {
+                    if (key == GLFW.GLFW_KEY_RIGHT_ALT) mc.setScreen(ClickGUI.getINSTANCE());
+                    for (Module module : ModuleManager.INSTANCE.getModules()) {
+                        if (module.getKey() == key) {
+                            module.toggle();
+                        }
                     }
                 }
             }

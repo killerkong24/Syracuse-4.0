@@ -27,7 +27,7 @@ public class ClickGUI extends Screen {
     private final MinecraftClient mc = MinecraftClient.getInstance();
     private final boolean close = false;
     public float windowX = 200, windowY = 200;
-    public float width = 500, height = 310;
+    public float width = 500, height = 320;
     public Category selectedCategory = Category.COMBAT;
     public Module selectedModule;
     // values for anim

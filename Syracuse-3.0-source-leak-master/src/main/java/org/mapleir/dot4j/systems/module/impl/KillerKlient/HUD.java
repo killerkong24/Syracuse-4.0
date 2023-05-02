@@ -3,6 +3,8 @@ package org.mapleir.dot4j.systems.module.impl.KillerKlient;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.MathHelper;
 import org.mapleir.dot4j.gui.setting.BooleanSetting;
+import org.mapleir.dot4j.gui.setting.ModeSetting;
+import org.mapleir.dot4j.helper.utils.Theme;
 import org.mapleir.dot4j.systems.module.core.Category;
 import org.mapleir.dot4j.systems.module.core.Module;
 
@@ -25,6 +27,7 @@ public class HUD extends Module {
         double rainbowState = Math.ceil((System.currentTimeMillis() + offset) / speed) % 360;
         return 0xff000000 | MathHelper.hsvToRgb((float) (rainbowState / 360.0), sat, bri);
     }
+
 
     @Override
     public void draw(MatrixStack matrices) {

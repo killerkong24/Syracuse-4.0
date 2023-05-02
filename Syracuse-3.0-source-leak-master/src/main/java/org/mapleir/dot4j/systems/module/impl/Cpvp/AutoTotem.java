@@ -21,7 +21,7 @@ import org.mapleir.dot4j.systems.module.core.Module;
 @Module.Info(name = "AutoTotem", description = "anti dier", category = Category.CPVP)
 public class AutoTotem extends Module {
 
-    private final ModeSetting mode = new ModeSetting("mode","fast totem", "inv totem");
+    private final ModeSetting mode = new ModeSetting("mode","fast totem", "inv totem","fast totem");
     private final NumberSetting delay = new NumberSetting("delay",0, 20,0,1);
     private final NumberSetting totemSlot = new NumberSetting("totem slot",0, 8,8,1);
     public BooleanSetting autoSwitch = new BooleanSetting("Auto Switch", false);
@@ -41,7 +41,7 @@ public class AutoTotem extends Module {
         clock = -1;
     }
 
-    @EventTarget
+    @Override
     public void onTick() {
         //fast totem
         if (mode.isMode("fast totem")) {
@@ -90,11 +90,9 @@ public class AutoTotem extends Module {
             if (autoSwitch.isEnabled()) {
                 inv.selectedSlot = (int) totemSlot.getValue();
             }
-            if (inv.offHand.get(0).getItem() != Items.TOTEM_OF_UNDYING)
-            {
+            if (inv.offHand.get(0).getItem() != Items.TOTEM_OF_UNDYING) {
                 int slot = nextTotemSlot;
-                if (slot != -1)
-                {
+                if (slot != -1) {
                     mc.interactionManager.clickSlot(((InventoryScreen) mc.currentScreen).getScreenHandler().syncId, slot, 40, SlotActionType.SWAP, mc.player);
                     return;
                 }

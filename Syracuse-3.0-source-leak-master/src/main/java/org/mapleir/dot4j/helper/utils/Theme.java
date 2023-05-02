@@ -34,7 +34,7 @@ public class Theme {
 
     public static Color CONFIG_EDIT_BG = Color.white;
 
-    public static void darkTheme() {
+    public static void dark() {
         WINDOW_COLOR = new Color(21, 22, 25);
         ENABLED = new Color(51, 112, 203);
 
@@ -65,7 +65,34 @@ public class Theme {
         CONFIG_EDIT_BG = new Color(20, 20, 25);
     }
 
-    public static void lightTheme() {
+    public static void darkclear() {
+        WINDOW_COLOR = new Color(30, 30, 30,192);
+        ENABLED = new Color(0, 0, 0);
 
+        UNFOCUSED_TEXT_COLOR = new Color(128,128,128);
+        //DISABLED_TEXT_COLOR = ;
+
+        SETTINGS_BG = new Color(32, 31, 35,100);
+        SETTINGS_HEADER = new Color(39, 38, 42,75);
+
+        MODULE_ENABLED_BG_HOVER = new Color(43, 41, 45,150);
+        MODULE_DISABLED_BG_HOVER = new Color(35, 35, 35,150);
+
+        MODULE_ENABLED_BG = new Color(36, 34, 38,100);
+        MODULE_DISABLED_BG = new Color(32, 31, 33,100);
+        MODULE_COLOR = new Color(0,0,0,92);
+        MODULE_TEXT = new Color(94, 95, 98);
+
+        TOGGLE_BUTTON_BG = new Color(59, 60, 65);
+        TOGGLE_BUTTON_FILL = new Color(29, 27, 31);
+
+        NORMAL_TEXT_COLOR = new Color(255,255,255);
+
+        MODE_SETTING_BG = new Color(46, 45, 48,150);
+        MODE_SETTING_FILL = new Color(32, 31, 35,150);
+
+        SLIDER_SETTING_BG = new Color(73, 72, 76);
+
+        CONFIG_EDIT_BG = new Color(20, 20, 25,100);
     }
 }
