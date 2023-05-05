@@ -7,10 +7,10 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "org.mapleir.dot4j.client.ClientInit"
+      "net.fabricmc.fabric.client.ClientInit"
     ],
     "main": [
-      "org.mapleir.dot4j.ClientMain"
+      "net.fabricmc.fabric.ClientMain"
     ]
   },
   "mixins": [
