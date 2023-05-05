@@ -53,7 +53,7 @@ public class ClientMain implements ModInitializer {
         MinecraftClient mc = MinecraftClient.getInstance();
         if (mc.currentScreen == null) {
                 if (action == GLFW.GLFW_PRESS) {
-                    if (key == GLFW.GLFW_KEY_8) mc.setScreen(ClickGUI.getINSTANCE());
+                    if (key == GLFW.GLFW_KEY_RIGHT_ALT) mc.setScreen(ClickGUI.getINSTANCE());
                     for (Module module : ModuleManager.INSTANCE.getModules()) {
                         if (module.getKey() == key) {
                             module.toggle();
