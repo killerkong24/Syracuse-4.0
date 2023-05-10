@@ -44,6 +44,7 @@ public class ModuleManager {
         // CPVP MODULES
         add(new AutoCrystal());
         add(new AutoTotem());
+        add(new AnchorMacro());
         add(new CrystalPop());
         add(new CrystalPlace());
 

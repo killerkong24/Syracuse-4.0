@@ -12,6 +12,7 @@ import net.fabricmc.fabric.systems.module.core.ModuleManager;
 import net.minecraft.client.MinecraftClient;
 import org.lwjgl.glfw.GLFW;
 
+import java.awt.*;
 import java.io.IOException;
 
 public class ClientMain implements ModInitializer {
@@ -63,6 +64,7 @@ public class ClientMain implements ModInitializer {
             }
         }
     }
+
 
     public void onTick() {
         if (PacketHelper.mc.player != null) {

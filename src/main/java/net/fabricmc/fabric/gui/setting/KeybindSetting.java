@@ -13,6 +13,7 @@ public class KeybindSetting extends Setting {
     public int getKey() {
         return key;
     }
+    public boolean ispressed(){return enabled;}
 
     public void setKey(int key) {
         this.key = key;
