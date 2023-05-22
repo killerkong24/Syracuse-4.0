@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Syracuse-3.0-source-leak-master.Syracuse-3.0-source-leak-master.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Syracuse-3.0-source-leak-master.Syracuse-3.0-source-leak-master.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Syracuse-4.0.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Syracuse-4.0.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Syracuse-4.0.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Syracuse-4.0.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.mapleir.Syracuse-4.0.main.iml" filepath="$PROJECT_DIR$/.idea/modules/org.mapleir.Syracuse-4.0.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.mapleir.Syracuse-4.0.test.iml" filepath="$PROJECT_DIR$/.idea/modules/org.mapleir.Syracuse-4.0.test.iml" />
     </modules>
   </component>
 </project>

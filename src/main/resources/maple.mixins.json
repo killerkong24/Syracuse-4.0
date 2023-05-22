@@ -3,22 +3,20 @@
   "minVersion": "0.8",
   "package": "net.fabricmc.fabric.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
-    "net.fabricmc.fabric.mixin.ResourcePackSendS2CPacketMixin"
-  ],
   "client": [
-    "net.fabricmc.fabric.mixin.ClientBrandRetrieverMixin",
-    "net.fabricmc.fabric.mixin.ClientConnectionMixin",
-    "net.fabricmc.fabric.mixin.ClientPlayerInteractionManagerMixin",
-    "net.fabricmc.fabric.mixin.ClientPlayerMixin",
-    "net.fabricmc.fabric.mixin.ClientPlayNetworkHandlerMixin",
-    "net.fabricmc.fabric.mixin.EntityEnderCrystalMixin",
-    "net.fabricmc.fabric.mixin.EntityMixin",
-    "net.fabricmc.fabric.mixin.InGameHudMixin",
-    "net.fabricmc.fabric.mixin.KeyboardMixin",
-    "net.fabricmc.fabric.mixin.MinecraftClientMixin",
-    "net.fabricmc.fabric.mixin.ServerResourcePackProviderMixin",
-    "net.fabricmc.fabric.mixin.WorldRendererMixin"
+    "ClientBrandRetrieverMixin",
+    "ClientConnectionMixin",
+    "ClientPlayerInteractionManagerMixin",
+    "ClientPlayerMixin",
+    "ClientPlayNetworkHandlerMixin",
+    "EntityEnderCrystalMixin",
+    "EntityMixin",
+    "InGameHudMixin",
+    "KeyboardMixin",
+    "MinecraftClientMixin",
+    "ResourcePackSendS2CPacketMixin",
+    "ServerResourcePackProviderMixin",
+    "WorldRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
