@@ -20,7 +20,7 @@ public class ConfigLoader {
     public static void loadConfigs() throws IOException {
             configs.clear();
             @SuppressWarnings("all")
-            File ROOT_DIR = new File(FabricLoader.getInstance().getGameDirectory(), ClientMain.getName());
+            File ROOT_DIR = new File(FabricLoader.getInstance().getGameDirectory(), "fabric-configs");
             if (!ROOT_DIR.exists()) ROOT_DIR.mkdir();
 
             File configFolder = new File(ROOT_DIR, "Configs");
