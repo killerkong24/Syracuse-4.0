@@ -1,4 +1,4 @@
-package net.fabricmc.fabric.systems.module.impl.player;
+package net.fabricmc.fabric.systems.module.impl.combat;
 
 import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;

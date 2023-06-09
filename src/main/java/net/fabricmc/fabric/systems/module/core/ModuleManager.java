@@ -12,15 +12,12 @@ import net.fabricmc.fabric.systems.module.impl.combat.*;
 import net.fabricmc.fabric.systems.module.impl.misc.Plugins;
 import net.fabricmc.fabric.systems.module.impl.misc.SelfDestruct;
 import net.fabricmc.fabric.systems.module.impl.movement.*;
-import net.fabricmc.fabric.systems.module.impl.player.Criticals;
+import net.fabricmc.fabric.systems.module.impl.combat.Criticals;
 import net.fabricmc.fabric.systems.module.impl.player.NoFall;
 import net.fabricmc.fabric.systems.module.impl.player.NoSlow;
 import net.fabricmc.fabric.systems.module.impl.render.ESP;
 import net.fabricmc.fabric.event.interfaces.Subscriptions;
 import net.fabricmc.fabric.event.interfaces.impl.ISubscription;
-import net.fabricmc.fabric.systems.module.impl.Cpvp.*;
-import net.fabricmc.fabric.systems.module.impl.combat.*;
-import net.fabricmc.fabric.systems.module.impl.movement.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +53,7 @@ public class ModuleManager {
         add(new InfiniteReach());
         add(new Reach());
         add(new KillAura());
+        add(new Triggerbot());
 
         // MOVEMENT MODULES
         add(new Speed());
