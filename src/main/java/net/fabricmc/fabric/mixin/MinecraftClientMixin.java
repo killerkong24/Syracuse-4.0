@@ -1,8 +1,8 @@
 package net.fabricmc.fabric.mixin;
 
-import net.minecraft.client.MinecraftClient;
 import net.fabricmc.fabric.ClientMain;
 import net.fabricmc.fabric.event.impl.EventUpdate;
+import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

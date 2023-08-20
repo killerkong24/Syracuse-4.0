@@ -1,14 +1,13 @@
 package net.fabricmc.fabric.mixin;
 
+import net.fabricmc.fabric.ClientMain;
 import net.fabricmc.fabric.command.Command;
 import net.fabricmc.fabric.command.CommandManager;
 import net.fabricmc.fabric.event.impl.CommandSuggestEvent;
+import net.fabricmc.fabric.event.impl.PacketSendEvent;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.packet.Packet;
-import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.CommandSuggestionsS2CPacket;
-import net.fabricmc.fabric.ClientMain;
-import net.fabricmc.fabric.event.impl.PacketSendEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

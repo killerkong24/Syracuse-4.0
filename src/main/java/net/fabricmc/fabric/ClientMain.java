@@ -2,7 +2,8 @@ package net.fabricmc.fabric;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.event.impl.WorldRenderEndEvent;
-import net.fabricmc.fabric.gui.clickgui.ClickGUI;
+import net.fabricmc.fabric.gui.clickgui.VapeClickGui;
+import net.fabricmc.fabric.helper.utils.FontRenderer;
 import net.fabricmc.fabric.helper.utils.PacketHelper;
 import net.fabricmc.fabric.helper.utils.Theme;
 import net.fabricmc.fabric.systems.config.Config;
@@ -10,6 +11,7 @@ import net.fabricmc.fabric.systems.config.ConfigLoader;
 import net.fabricmc.fabric.systems.module.core.Module;
 import net.fabricmc.fabric.systems.module.core.ModuleManager;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
 import java.io.IOException;
@@ -22,6 +24,7 @@ public class ClientMain implements ModInitializer {
     private static final String commandPrefix = "#";
 
     public static Config selectedConfig;
+    private static FontRenderer fontRenderer;
     public boolean isSelfDestucted = false;
 
     public static ClientMain getINSTANCE() {
@@ -53,7 +56,7 @@ public class ClientMain implements ModInitializer {
         MinecraftClient mc = MinecraftClient.getInstance();
         if (mc.currentScreen == null) {
                 if (action == GLFW.GLFW_PRESS) {
-                    if (key == GLFW.GLFW_KEY_RIGHT_ALT) mc.setScreen(ClickGUI.getINSTANCE());
+                    if (key == GLFW.GLFW_KEY_RIGHT_ALT) mc.setScreen(VapeClickGui.getINSTANCE());
                     for (Module module : ModuleManager.INSTANCE.getModules()) {
                         if (module.getKey() == key) {
                             module.toggle();
@@ -62,6 +65,12 @@ public class ClientMain implements ModInitializer {
                 }
             }
         }
+    }
+    public static FontRenderer getFontRenderer() {
+        if(fontRenderer == null) {
+            fontRenderer = new FontRenderer("BalooDa2-VariableFont_wght.ttf", new Identifier("vape_menu", "textures/font"), 20);
+        }
+        return fontRenderer;
     }
 
     public void onTick() {

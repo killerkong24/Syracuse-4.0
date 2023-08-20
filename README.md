@@ -11,5 +11,5 @@ ISNT my own most of the code is taken for aidshark, and CwHack although i did ad
 you have to have pie chart open (shift + f3) than you can do right alt
 
 #credit
-this sexy gui is made by corrupted hades https://github.com/CorruptionHades/VapeMenu
+this sexy gui is made by corrupted hades https://github.com/CorruptionHades/ClientMain
 

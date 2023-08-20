@@ -5,7 +5,7 @@ import net.fabricmc.fabric.systems.module.impl.Cpvp.AutoTotem;
 import net.fabricmc.fabric.systems.module.impl.Cpvp.CrystalPlace;
 import net.fabricmc.fabric.systems.module.impl.Cpvp.CrystalPop;
 import net.fabricmc.fabric.systems.module.impl.KillerKlient.Arraylist;
-import net.fabricmc.fabric.systems.module.impl.KillerKlient.HUD;
+import net.fabricmc.fabric.systems.module.impl.KillerKlient.HudModule;
 import net.fabricmc.fabric.systems.module.impl.KillerKlient.Spoofer;
 import net.fabricmc.fabric.systems.module.impl.KillerKlient.Theme;
 import net.fabricmc.fabric.systems.module.impl.combat.*;
@@ -18,6 +18,7 @@ import net.fabricmc.fabric.systems.module.impl.player.NoSlow;
 import net.fabricmc.fabric.systems.module.impl.render.ESP;
 import net.fabricmc.fabric.event.interfaces.Subscriptions;
 import net.fabricmc.fabric.event.interfaces.impl.ISubscription;
+import net.minecraft.client.gui.DrawContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,6 @@ public class ModuleManager {
         // RENDER MODULES:
         add(new Arraylist());
         add(new ESP());
-        add(new HUD());
         add(new Theme());
         // CPVP MODULES
         add(new AutoCrystal());

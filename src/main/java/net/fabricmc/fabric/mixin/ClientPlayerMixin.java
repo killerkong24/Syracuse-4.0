@@ -1,11 +1,11 @@
 package net.fabricmc.fabric.mixin;
 
+import net.fabricmc.fabric.event.impl.HandSwingEvent;
+import net.fabricmc.fabric.gui.setting.BooleanSetting;
 import net.fabricmc.fabric.systems.module.core.ModuleManager;
 import net.fabricmc.fabric.systems.module.impl.player.NoSlow;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.util.Hand;
-import net.fabricmc.fabric.event.impl.HandSwingEvent;
-import net.fabricmc.fabric.gui.setting.BooleanSetting;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,7 +16,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ClientPlayerEntity.class)
 public abstract class ClientPlayerMixin {
-
     @Shadow
     public abstract boolean isSneaking();
 

@@ -31,7 +31,7 @@ public class BlockUtils {
         }
     }
     private static void addToArrayIfHasBlock(ArrayList<BlockPos> array, BlockPos pos) {
-        if (hasBlock(pos) && !isBlockReplaceable(pos))
+        if (hasBlock(pos))
             array.add(pos);
     }
 
@@ -155,9 +155,6 @@ public class BlockUtils {
         return Blocks.STONE.getDefaultState();
     }
 
-    public static boolean isBlockReplaceable(BlockPos pos) {
-        return getBlockState(pos).getMaterial().isReplaceable();
-    }
 
     public static Stream<BlockPos> getAllInBoxStream(BlockPos from, BlockPos to) {
         final BlockPos min = new BlockPos(Math.min(from.getX(), to.getX()),

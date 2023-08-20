@@ -17,7 +17,7 @@ repositories {
 dependencies {
     // To change the versions see the gradle.properties file
 
-    //implementation(files("H:/IntelijProjects/VapeMenu/snakeyaml-1.33.jar"))
+    //implementation(files("H:/IntelijProjects/ClientMain/snakeyaml-1.33.jar"))
 
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"

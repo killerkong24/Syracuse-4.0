@@ -1,6 +1,5 @@
 package net.fabricmc.fabric.systems.module.impl.combat;
 
-import net.minecraft.block.Material;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.util.InputUtil;
@@ -218,10 +217,6 @@ private void attackTarget(final LivingEntity e)
         return e != null && Math.sqrt(mc.player.squaredDistanceTo(e)) <= range.getValue();
     }
 
-    private static boolean onGround()
-    {
-        return mc.world.getBlockState(new BlockPos((int) mc.player.getX(), (int) (mc.player.getY() - 1E-5D), (int) mc.player.getZ())).getMaterial() != Material.AIR || mc.player.isOnGround();
-    }
 
     private boolean itemInHand () {
         final Item item = mc.player.getMainHandStack().getItem();
